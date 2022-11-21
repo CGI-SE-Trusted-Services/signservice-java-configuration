@@ -3,6 +3,7 @@ package se.signatureservice.configuration.common.utils;
 import se.signatureservice.configuration.common.InternalErrorException;
 
 import java.util.List;
+import java.util.Map;
 
 public class ConfigUtils {
 
@@ -43,7 +44,7 @@ public class ConfigUtils {
         } catch(Exception e){
             throw new InternalErrorException(errorMessage,e);
         }
-        if(value == null && !required){
+        if(isNullOrEmptyMap(value) && !required){
             return defaultValue;
         }
         throw new InternalErrorException(errorMessage);
@@ -91,7 +92,7 @@ public class ConfigUtils {
             }
         }
 
-        if(value == null && !required){
+        if(isNullOrEmptyMap(value) && !required){
             return defaultValue;
         }
 
@@ -142,7 +143,7 @@ public class ConfigUtils {
             }
         }
 
-        if(value == null && !required){
+        if(isNullOrEmptyMap(value) && !required){
             return defaultValue;
         }
 
@@ -180,7 +181,7 @@ public class ConfigUtils {
         } catch(Exception e){
             throw new InternalErrorException(errorMessage,e);
         }
-        if(value == null && !required){
+        if(isNullOrEmptyMap(value) && !required){
             return defaultValue;
         }
         throw new InternalErrorException(errorMessage);
@@ -240,7 +241,7 @@ public class ConfigUtils {
         } catch(Exception e){
             throw new InternalErrorException(errorMessage, e);
         }
-        if(value == null && !required){
+        if(isNullOrEmptyMap(value) && !required){
             return defaultValue;
         }
         throw new InternalErrorException(errorMessage);
@@ -282,10 +283,25 @@ public class ConfigUtils {
 
             return list;
         }
-        if(value == null && !required){
+        if(isNullOrEmptyMap(value) && !required){
             return null;
         }
 
         throw new InternalErrorException(errorMessage);
+    }
+
+    /**
+     * Check if an object is null or an empty Map.
+     *
+     * @param value object to check.
+     * @return ture if object is null or an empty map, otherwise false.
+     */
+    @SuppressWarnings("rawtypes")
+    public static boolean isNullOrEmptyMap(Object value){
+        if(value == null){
+            return true;
+        }
+
+        return value instanceof Map && ((Map) value).isEmpty();
     }
 }
