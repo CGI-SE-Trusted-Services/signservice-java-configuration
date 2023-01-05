@@ -1,6 +1,7 @@
 package se.signatureservice.configuration.common.utils;
 
 import se.signatureservice.configuration.common.InternalErrorException;
+import se.signatureservice.configuration.common.InvalidArgumentException;
 
 import java.util.List;
 import java.util.Map;
@@ -15,7 +16,7 @@ public class ConfigUtils {
      * @return the parsed integer or null
      * @throws InternalErrorException if error occurred parsing the value
      */
-    public static Integer parseInteger(Object value, String errorMessage) throws InternalErrorException{
+    public static Integer parseInteger(Object value, String errorMessage) throws InternalErrorException {
         return parseInteger(value, errorMessage, false, null);
     }
 
@@ -28,23 +29,23 @@ public class ConfigUtils {
      * @return the parsed integer
      * @throws InternalErrorException if error occurred parsing the value
      */
-    public static Integer parseInteger(Object value, String errorMessage, boolean required, Integer defaultValue) throws InternalErrorException{
+    public static Integer parseInteger(Object value, String errorMessage, boolean required, Integer defaultValue) throws InternalErrorException {
 
         if (value instanceof Integer) {
             return (Integer) value;
         }
-        try{
-            if(value instanceof String){
-                if(((String) value).isEmpty()){
+        try {
+            if (value instanceof String) {
+                if (((String) value).isEmpty()) {
                     value = null;
                 } else {
                     return Integer.parseInt((String) value);
                 }
             }
-        } catch(Exception e){
-            throw new InternalErrorException(errorMessage,e);
+        } catch (Exception e) {
+            throw new InternalErrorException(errorMessage, e);
         }
-        if(isNullOrEmptyMap(value) && !required){
+        if (isNullOrEmptyMap(value) && !required) {
             return defaultValue;
         }
         throw new InternalErrorException(errorMessage);
@@ -77,22 +78,22 @@ public class ConfigUtils {
             return (Boolean) value;
         }
 
-        if(value instanceof String){
-            if(((String) value).isEmpty()){
+        if (value instanceof String) {
+            if (((String) value).isEmpty()) {
                 value = null;
             } else {
                 String s = ((String) value).toLowerCase().trim();
-                if(s.equals("true")) {
+                if (s.equals("true")) {
                     return true;
                 }
-                if(s.equals("false")) {
+                if (s.equals("false")) {
                     return false;
                 }
                 throw new InternalErrorException(errorMessage);
             }
         }
 
-        if(isNullOrEmptyMap(value) && !required){
+        if (isNullOrEmptyMap(value) && !required) {
             return defaultValue;
         }
 
@@ -134,16 +135,16 @@ public class ConfigUtils {
      * @return the parsed string
      * @throws InternalErrorException if error occurred parsing the value
      */
-    public static String parseString(Object value, String errorMessage, boolean required, String defaultValue) throws InternalErrorException{
-        if(value instanceof String){
-            if(((String)value).isEmpty()){
+    public static String parseString(Object value, String errorMessage, boolean required, String defaultValue) throws InternalErrorException {
+        if (value instanceof String) {
+            if (((String) value).isEmpty()) {
                 value = null;
             } else {
-                return (String)value;
+                return (String) value;
             }
         }
 
-        if(isNullOrEmptyMap(value) && !required){
+        if (isNullOrEmptyMap(value) && !required) {
             return defaultValue;
         }
 
@@ -160,28 +161,28 @@ public class ConfigUtils {
      * @return the parsed float
      * @throws InternalErrorException if error occurred parsing the value
      */
-    public static Float parseFloat(Object value, String errorMessage, boolean required, Float defaultValue) throws InternalErrorException{
-        if(value instanceof Float) {
+    public static Float parseFloat(Object value, String errorMessage, boolean required, Float defaultValue) throws InternalErrorException {
+        if (value instanceof Float) {
             return (Float) value;
         }
-        if(value instanceof Long) {
-            return ((Long)value).floatValue();
+        if (value instanceof Long) {
+            return ((Long) value).floatValue();
         }
-        if(value instanceof Integer){
-            return ((Integer)value).floatValue();
+        if (value instanceof Integer) {
+            return ((Integer) value).floatValue();
         }
         try {
-            if(value instanceof String){
-                if(((String) value).isEmpty()){
+            if (value instanceof String) {
+                if (((String) value).isEmpty()) {
                     value = null;
                 } else {
                     return Float.parseFloat((String) value);
                 }
             }
-        } catch(Exception e){
-            throw new InternalErrorException(errorMessage,e);
+        } catch (Exception e) {
+            throw new InternalErrorException(errorMessage, e);
         }
-        if(isNullOrEmptyMap(value) && !required){
+        if (isNullOrEmptyMap(value) && !required) {
             return defaultValue;
         }
         throw new InternalErrorException(errorMessage);
@@ -230,18 +231,18 @@ public class ConfigUtils {
         if (value instanceof Long) {
             return (Long) value;
         }
-        try{
-            if(value instanceof String){
-                if(((String) value).isEmpty()){
+        try {
+            if (value instanceof String) {
+                if (((String) value).isEmpty()) {
                     value = null;
                 } else {
                     return Long.parseLong((String) value);
                 }
             }
-        } catch(Exception e){
+        } catch (Exception e) {
             throw new InternalErrorException(errorMessage, e);
         }
-        if(isNullOrEmptyMap(value) && !required){
+        if (isNullOrEmptyMap(value) && !required) {
             return defaultValue;
         }
         throw new InternalErrorException(errorMessage);
@@ -269,21 +270,21 @@ public class ConfigUtils {
      * @throws InternalErrorException if error occurred parsing the value
      */
     @SuppressWarnings("unchecked")
-    public static List<String> parseListOfString(Object value, String errorMessage, boolean required)  throws InternalErrorException{
-        if(value instanceof List){
+    public static List<String> parseListOfString(Object value, String errorMessage, boolean required) throws InternalErrorException {
+        if (value instanceof List) {
             List<String> list = (List) value;
-            for(Object s : list){
-                if(!(s instanceof String)){
+            for (Object s : list) {
+                if (!(s instanceof String)) {
                     throw new InternalErrorException(errorMessage);
                 }
             }
-            if(list.size() == 0 && required){
+            if (list.size() == 0 && required) {
                 throw new InternalErrorException(errorMessage);
             }
 
             return list;
         }
-        if(isNullOrEmptyMap(value) && !required){
+        if (isNullOrEmptyMap(value) && !required) {
             return null;
         }
 
@@ -297,11 +298,33 @@ public class ConfigUtils {
      * @return ture if object is null or an empty map, otherwise false.
      */
     @SuppressWarnings("rawtypes")
-    public static boolean isNullOrEmptyMap(Object value){
-        if(value == null){
+    public static boolean isNullOrEmptyMap(Object value) {
+        if (value == null) {
             return true;
         }
 
         return value instanceof Map && ((Map) value).isEmpty();
     }
+
+    /**
+     * Help method parsing the key/truststore extension of a specified file if not specified using type.
+     *
+     * @param type key/truststore file extension.
+     * @param filePrefix file extension.
+     * @return type if specified otherwise key/truststore file extension.
+     * @throws InvalidArgumentException if an unsupported truststore filename extension was used.
+     */
+    public static String getKeyStoreExtension(String type, String filePrefix) throws InvalidArgumentException {
+        if (type == null && filePrefix != null) {
+            if (filePrefix.equalsIgnoreCase("p12") || filePrefix.equalsIgnoreCase("pfx")) {
+                type = "PKCS12";
+            } else if (filePrefix.equalsIgnoreCase("jks")) {
+                type = "JKS";
+            } else {
+                throw new InvalidArgumentException("Unsupported truststore filename extension: ${trustStorePrefix}");
+            }
+        }
+        return type;
+    }
+
 }
