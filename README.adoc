@@ -1,0 +1,5 @@
+= SignService Java Configuration
+
+== Overview
+
+This project contains base classes in common for configuration of various parts of signservice applications and libraries.
