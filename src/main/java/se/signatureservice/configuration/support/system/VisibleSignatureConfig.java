@@ -95,6 +95,12 @@ public class VisibleSignatureConfig {
     String timeStampLabel = "Time";
 
     /**
+     * Time format to use for time stamp.
+     * Default is "yyyy-MM-dd HH:mm:ss"
+     */
+    String timeStampFormat = "yyyy-MM-dd HH:mm:ss";
+
+    /**
      * Padding to use around text.
      * Default is 50.
      */
@@ -123,6 +129,7 @@ public class VisibleSignatureConfig {
             headlineText = ConfigUtils.parseString(config.get("headlineText"), "Invalid value for 'headlineText' in visibleSignature configuration", false, headlineText);
             signerLabel = ConfigUtils.parseString(config.get("signerLabel"), "Invalid value for 'signerLabel' in visibleSignature configuration", false, signerLabel);
             timeStampLabel = ConfigUtils.parseString(config.get("timeStampLabel"), "Invalid value for 'timeStampLabel' in visibleSignature configuration", false, timeStampLabel);
+            timeStampFormat = ConfigUtils.parseString(config.get("timeStampFormat"), "Invalid value for 'timeStampFormat' in visibleSignature configuration", false, timeStampFormat);
             textPadding = ConfigUtils.parseFloat(config.get("textPadding"), "Invalid value for 'textPadding' in visibleSignature configuration", false, textPadding);
 
             try {
@@ -231,6 +238,14 @@ public class VisibleSignatureConfig {
 
     public void setTimeStampLabel(String timeStampLabel) {
         this.timeStampLabel = timeStampLabel;
+    }
+
+    public String getTimeStampFormat() {
+        return timeStampFormat;
+    }
+
+    public void setTimeStampFormat(String timeStampFormat) {
+        this.timeStampFormat = timeStampFormat;
     }
 
     public float getTextPadding() {
