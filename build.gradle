@@ -1,7 +1,6 @@
 group "se.signatureservice.configuration"
 
 apply plugin: "java-library"
-apply plugin: "certificateservices.remotesign.gradle"
 
 pluginManager.withPlugin('org.certificateservices.gradle.certservice-gradle-plugin') {
     certserviceSettings {
