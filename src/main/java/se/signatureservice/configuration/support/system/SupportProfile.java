@@ -185,6 +185,46 @@ public interface SupportProfile {
     String getCertificateType();
 
     /**
+     * Boolean value if requestedCertAttributes should be fetched
+     * and parsed from metadata.
+     *
+     * Example configuration:
+     * fetchCertAttributesFromMetaData = true
+     */
+    boolean isFetchCertAttributesFromMetaData();
+
+    /**
+     * Map containing custom attributes to be mapped to it's corresponding metadata for requestedCertAttributes.
+     * Used in special cases when the Name in RequestedAttribute metadata don't apply.
+     *
+     * For each entry the following configuration keys are used :
+     *   - samlAttributeName : The SAML attribute name to be matched against the Name
+     *   for a RequestedAttribute in the metadata.
+     *   - certAttributeRef : To which the samlAttributeName will be mapped to.
+     *
+     * Example configuration 1:
+     * metadataCustomCertAttribute {
+     *     givenName {
+     *         samlAttributeName: "http://sambi.se/attributes/1/givenName"
+     *         certAttributeRef: "2.5.4.42"
+     *     }
+     * }
+     *
+     * Example configuration 2:
+     * metadataCustomCertAttribute {
+     *     givenName {
+     *         samlAttributeName:
+     *                      -"http://sambi.se/attributes/1/surname"
+     *                      -"urn:surname"
+     *         certAttributeRef: "2.5.4.4"
+     *         certNameType: "sda"
+     *         required: true
+     *     }
+     * }
+     */
+    Map<String, Map<String,Object>> getMetadataCustomCertAttribute();
+
+    /**
      * Map containing Requests for subject attributes in a signer
      * certificate that is associated with the signer of the generated
      * signature as a result of the sign request.
