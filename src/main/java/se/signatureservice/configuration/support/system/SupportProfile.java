@@ -189,7 +189,7 @@ public interface SupportProfile {
      * and parsed from metadata.
      *
      * Example configuration:
-     * fetchCertAttributesFromMetaData = true
+     * fetchCertAttributesFromMetaData: true
      */
     boolean isFetchCertAttributesFromMetaData();
 
