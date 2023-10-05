@@ -150,14 +150,10 @@ public class ConfigUtils {
      */
     public static String parseString(Object value, String errorMessage, boolean required, String defaultValue) throws InternalErrorException {
         if (value instanceof String) {
-            if (((String) value).isEmpty()) {
-                value = null;
-            } else {
+            if (!((String) value).trim().isEmpty()) {
                 return (String) value;
             }
-        }
-
-        if (isNullOrEmptyMap(value) && !required) {
+        } else if (isNullOrEmptyMap(value) && !required) {
             return defaultValue;
         }
 
@@ -284,25 +280,31 @@ public class ConfigUtils {
      */
     @SuppressWarnings("unchecked")
     public static List<String> parseListOfString(Object value, String errorMessage, boolean required) throws InternalErrorException {
-        if (value instanceof List) {
-            List<String> list = (List) value;
-            for (Object s : list) {
-                if (!(s instanceof String)) {
-                    throw new InternalErrorException(errorMessage);
-                }
-            }
-            if (list.size() == 0 && required) {
+        if (value instanceof List<?>) {
+            List<?> list = (List<?>) value;
+
+            if (list.isEmpty() && required) {
                 throw new InternalErrorException(errorMessage);
             }
 
-            return list;
+            for (Object item : list) {
+                if (item == null) {
+                    throw new InternalErrorException(errorMessage);
+                } else if (!(item instanceof String) || ((String) item).trim().isEmpty()) {
+                    throw new InternalErrorException(errorMessage);
+                }
+            }
+
+            return (List<String>) list;
         }
+
         if (isNullOrEmptyMap(value) && !required) {
             return null;
         }
 
         throw new InternalErrorException(errorMessage);
     }
+
 
     /**
      * Check if an object is null or an empty Map.
@@ -312,11 +314,7 @@ public class ConfigUtils {
      */
     @SuppressWarnings("rawtypes")
     public static boolean isNullOrEmptyMap(Object value) {
-        if (value == null) {
-            return true;
-        }
-
-        return value instanceof Map && ((Map) value).isEmpty();
+        return value == null || (value instanceof Map && ((Map<?, ?>) value).isEmpty());
     }
 
     /**
