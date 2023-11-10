@@ -162,6 +162,15 @@ public interface SupportProfile {
     String getSignRequester();
 
     /**
+     * Boolean value if AuthnContextClassRef should be fetched
+     * and parsed from metadata.
+     *
+     * Example configuration:
+     * fetchAuthnContextClassRefFromMetaData: true
+     */
+    boolean isFetchAuthnContextClassRefFromMetaData();
+
+    /**
      * Type/level of authentication to request in the signature process.
      * @deprecated Use defaultAuthnContextClassRef (since 2018-11-21).
      */
