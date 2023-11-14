@@ -25,19 +25,24 @@ import java.util.Map;
  */
 public class VisibleSignatureConfig {
 
+    private static final boolean DEFAULT_ENABLE=false;
+    private static final String DEFAULT_FONT=null;
+    private static final boolean DEFAULT_SHOW_LOGO=true;
+    private static final boolean DEFAULT_SHOW_HEADLINE=true;
+
     /**
      * Flag to enable/disable visible signatures in signed PDF documents. Visible signatures
      * will only be included if all required attributes for visible signatures are included
      * in the "signatureAttributes" parameters in call to prepareSignature.
      * Default is disabled.
      */
-    boolean enable = false;
+    boolean enable = DEFAULT_ENABLE;
 
     /**
      * Class path to font file to use when rendering text for visible signature.
      * Default, if not specified, is PT Serif Regular.
      */
-    String font = null;
+    String font = DEFAULT_FONT;
 
     /**
      * Font size for rendered text.
@@ -62,7 +67,7 @@ public class VisibleSignatureConfig {
      * within the visible signature.
      * Default is true.
      */
-    boolean showLogo = true;
+    boolean showLogo = DEFAULT_SHOW_LOGO;
 
     /**
      * Class path to logo image to display if `showLogo` is enabled.
@@ -120,12 +125,12 @@ public class VisibleSignatureConfig {
      */
     public VisibleSignatureConfig(Map<String,String> config) throws InternalErrorException {
         if(config != null){
-            enable = ConfigUtils.parseBoolean(config.get("enable"), "Invalid value for 'enable' in visibleSignature configuration", false, enable);
-            font = ConfigUtils.parseString(config.get("font"), "Invalid value for 'font' in visibleSignature configuration", false, font);
+            enable = ConfigUtils.parseBoolean(config.get("enable"), "Invalid value for 'enable' in visibleSignature configuration", false, DEFAULT_ENABLE);
+            font = ConfigUtils.parseString(config.get("font"), "Invalid value for 'font' in visibleSignature configuration", false, DEFAULT_FONT);
             fontSize = ConfigUtils.parseFloat(config.get("fontSize"), "Invalid value for 'fontSize' in visibleSignature configuration", false, fontSize);
-            showLogo = ConfigUtils.parseBoolean(config.get("showLogo"), "Invalid value for 'showLogo' in visibleSignature configuration", false, showLogo);
+            showLogo = ConfigUtils.parseBoolean(config.get("showLogo"), "Invalid value for 'showLogo' in visibleSignature configuration", false, DEFAULT_SHOW_LOGO);
             logoImage = ConfigUtils.parseString(config.get("logoImage"), "Invalid value for 'logoImage' in visibleSignature configuration", false, logoImage);
-            showHeadline = ConfigUtils.parseBoolean(config.get("showHeadline"), "Invalid value for 'showHeadline' in visibleSignature configuration", false, showHeadline);
+            showHeadline = ConfigUtils.parseBoolean(config.get("showHeadline"), "Invalid value for 'showHeadline' in visibleSignature configuration", false, DEFAULT_SHOW_HEADLINE);
             headlineText = ConfigUtils.parseString(config.get("headlineText"), "Invalid value for 'headlineText' in visibleSignature configuration", false, headlineText);
             signerLabel = ConfigUtils.parseString(config.get("signerLabel"), "Invalid value for 'signerLabel' in visibleSignature configuration", false, signerLabel);
             timeStampLabel = ConfigUtils.parseString(config.get("timeStampLabel"), "Invalid value for 'timeStampLabel' in visibleSignature configuration", false, timeStampLabel);
