@@ -140,11 +140,6 @@ public interface SupportProfile {
     String getUserDisplayNameAttribute();
 
     /**
-     * Time Stamp Server (TSA) to use. Required for all profiles except basic (B).
-     */
-    String getTimeStampServer();
-
-    /**
      * Signature service (frontend) SAML identity to specify in generated
      * EID Sign Requests (ex.https://esign.v2.st.signatureservice.se/signservice-frontend/metadata)
      */
@@ -354,4 +349,10 @@ public interface SupportProfile {
      * @return VisibleSignatureConfig instance
      */
     VisibleSignatureConfig getVisibleSignature() throws InternalErrorException;
+
+    /**
+     * Get timestamp configuration. Required for all profiles except basic (B).
+     * @return TimeStampConfig instance
+     */
+    TimeStampConfig getTimeStamp() throws InternalErrorException;
 }
