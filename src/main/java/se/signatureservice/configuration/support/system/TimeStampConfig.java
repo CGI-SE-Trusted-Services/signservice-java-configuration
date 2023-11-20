@@ -138,6 +138,7 @@ public class TimeStampConfig {
             trustStoreType = ConfigUtils.parseString(config.get("trustStoreType"), "Invalid value for 'trustStoreType' in timeStamp configuration", false, null);
             proxyHost = ConfigUtils.parseString(config.get("proxyHost"), "Invalid value for 'proxyHost' in timeStamp configuration", false, null);
             proxyPort = ConfigUtils.parseInteger(config.get("proxyPort"), "Invalid value for 'proxyPort' in timeStamp configuration", false, DEFAULT_PROXY_PORT);
+            proxyScheme = ConfigUtils.parseString(config.get("proxyScheme"), "Invalid value for 'proxyScheme' in timeStamp configuration", false, DEFAULT_PROXY_SCHEME);
             proxyUser = ConfigUtils.parseString(config.get("proxyUser"), "Invalid value for 'proxyUser' in timeStamp configuration", false, null);
             proxyPassword = ConfigUtils.parseString(config.get("proxyPassword"), "Invalid value for 'proxyPassword' in timeStamp configuration", false, null);
             proxyExcludedHosts = ConfigUtils.parseString(config.get("proxyExcludedHosts"), "Invalid value for 'proxyExcludedHosts' in timeStamp configuration", false, null);
