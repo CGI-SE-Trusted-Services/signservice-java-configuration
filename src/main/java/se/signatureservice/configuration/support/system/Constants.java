@@ -61,18 +61,19 @@ public class Constants {
 
     public final static String DEFAULT_PADES_SIGNATURELEVEL = "PAdES-BASELINE-B";
     public final static String DEFAULT_PADES_SIGNATUREPACKING = "ENVELOPED";
+    public final static Integer DEFAULT_PADES_CONTENT_SIZE = 0x2500;
 
     public final static String DEFAULT_CADES_SIGNATURELEVEL = "CAdES-BASELINE-B";
     public final static String DEFAULT_CADES_SIGNATUREPACKING = "ENVELOPING";
 
-    public final static String DEFAULT_VALIDATION_POLICY_NAME = "/defaultpolicy.xml";
+    public final static String DEFAULT_VALIDATION_POLICY_NAME = "/policy/basicpolicy.xml";
     public final static String DEFAULT_VALIDATION_TRUSTSTORE_TYPE = "JKS";
     public final static String DEFAULT_VALIDATION_STRICT = "false";
     public final static String DEFAULT_VALIDATION_DISABLE_REVOCATIONCHECK = "false";
 
     public final static Integer DEFAULT_TRANSACTION_TTL = 660;
 
-    public final static String DEFAULT_IMAGE_PATH = "/visibleSignatures/CGI_Logon.png";
+    public final static String DEFAULT_IMAGE_PATH = "/visibleSignatures/Default_Logo.png";
     public final static String VISIBLE_SIGNATURE_REQUEST_TIME = "visible_signature_request_time";
 
     public final static String DEFAULT_USER_ID_ATTRIBUTE_MAPPING = "urn:oid:1.2.752.29.4.13";
@@ -80,6 +81,8 @@ public class Constants {
     public final static Integer DEFAULT_REQUEST_VALIDITY_OVERLAP_IN_MINUTES = 2;
 
     public final static long DEFAULT_VALIDATION_CACHE_EXPIRATION_TIME = 86400000;
+
+    public final static String DEFAULT_ENCRYPTION_ALGORITHM_SCHEME = "RSA_PKCS1_5_WITH_AES256";
 
     /**
      * Indicates a value as not set.

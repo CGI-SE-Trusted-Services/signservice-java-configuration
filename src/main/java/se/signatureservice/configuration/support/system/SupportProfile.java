@@ -63,6 +63,12 @@ public interface SupportProfile {
     String getPadesSignaturePacking();
 
     /**
+     * PAdES content size reserved for signature data during
+     * signature operation.
+     */
+    int getPadesContentSize();
+
+    /**
      * CAdES Signature level.
      * Supported values: CMS-NOT-ETSI, CAdES-BASELINE-B, CAdES-BASELINE-T,
      * CAdES-BASELINE-LT, CAdES-BASELINE-LTA

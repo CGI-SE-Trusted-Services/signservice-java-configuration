@@ -73,7 +73,7 @@ public class VisibleSignatureConfig {
      * Class path to logo image to display if `showLogo` is enabled.
      * Default: CGI logo
      */
-    String logoImage = "/visibleSignatures/Default_Logo.png";
+    String logoImage = Constants.DEFAULT_IMAGE_PATH;
 
     /**
      * Flag to control if header line should be displayed or not.
