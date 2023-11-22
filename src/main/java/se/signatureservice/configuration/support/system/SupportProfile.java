@@ -195,15 +195,15 @@ public interface SupportProfile {
 
     /**
      * List of DefaultUserIdAttributeMapping values which can be overloaded
-     * from DefaultUserIdAttributeMappingConstants.
+     * via defaultUserIdAttributeMappingValues.
      *
      * Example configuration:
-     *   defaultUserIdAttributeMappingConstants:
+     *   defaultUserIdAttributeMappingValues:
      *     -"urn:oid:1.2.752.29.4.13"
      *     -"urn:oid:1.2.752.201.3.4"
      *     -"http://sambi.se/attributes/1/personalIdentityNumber"
      */
-    List<String> getDefaultUserIdAttributeMappingConstants();
+    List<String> getDefaultUserIdAttributeMappingValues();
 
     /**
      * Boolean value if requestedCertAttributes should be fetched
