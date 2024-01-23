@@ -106,6 +106,14 @@ public class VisibleSignatureConfig {
     String timeStampFormat = "yyyy-MM-dd HH:mm:ss";
 
     /**
+     * Template to use when displaying text within visible signature.
+     * If signature template is specified the configuration option
+     * "showHeadline" will be ignored and the template takes precedence.
+     * Default is null (not used).
+     */
+    String signatureTextTemplate = null;
+
+    /**
      * Padding to use around text.
      * Default is 50.
      */
@@ -136,6 +144,7 @@ public class VisibleSignatureConfig {
             timeStampLabel = ConfigUtils.parseString(config.get("timeStampLabel"), "Invalid value for 'timeStampLabel' in visibleSignature configuration", false, timeStampLabel);
             timeStampFormat = ConfigUtils.parseString(config.get("timeStampFormat"), "Invalid value for 'timeStampFormat' in visibleSignature configuration", false, timeStampFormat);
             textPadding = ConfigUtils.parseFloat(config.get("textPadding"), "Invalid value for 'textPadding' in visibleSignature configuration", false, textPadding);
+            signatureTextTemplate = ConfigUtils.parseString(config.get("signatureTextTemplate"), "Invalid value for 'signatureTextTemplate' in visibleSignature configuration", false, signatureTextTemplate);
 
             try {
                 String colorHex = ConfigUtils.parseString(config.get("fontColor"), "Invalid value for 'fontColor' in visibleSignature configuration", false, null);
@@ -259,5 +268,13 @@ public class VisibleSignatureConfig {
 
     public void setTextPadding(float textPadding) {
         this.textPadding = textPadding;
+    }
+
+    public String getSignatureTextTemplate() {
+        return signatureTextTemplate;
+    }
+
+    public void setSignatureTextTemplate(String template) {
+        this.signatureTextTemplate = template;
     }
 }
