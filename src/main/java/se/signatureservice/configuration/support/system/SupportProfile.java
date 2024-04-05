@@ -129,6 +129,7 @@ public interface SupportProfile {
      * SAML Attribute name that will map against user ID
      * @deprecated Use defaultUserIdAttributeMapping (since 2019-05-25).
      */
+    @Deprecated
     String getUserIdAttributeMapping();
 
     /**
