@@ -24,7 +24,7 @@ dependencies {
     implementation "org.bouncycastle:bcmail-jdk15on:1.70"
     implementation "com.fasterxml.jackson.core:jackson-databind:2.14.3"
     implementation "org.yaml:snakeyaml:1.33"
-    implementation "org.slf4j:slf4j-api:2.0.9"
+    implementation "org.slf4j:slf4j-api:1.7.36"
 }
 
 test {
