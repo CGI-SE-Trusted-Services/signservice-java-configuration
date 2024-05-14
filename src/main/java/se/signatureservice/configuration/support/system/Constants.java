@@ -84,6 +84,8 @@ public class Constants {
 
     public final static String DEFAULT_ENCRYPTION_ALGORITHM_SCHEME = "RSA_PKCS1_5_WITH_AES256";
 
+    public final static String DEFAULT_ASSURANCE_CERTIFICATION_NAME = "urn:oasis:names:tc:SAML:attribute:assurance-certification";
+
     /**
      * Indicates a value as not set.
      */
