@@ -1,0 +1,9 @@
+= Changelog
+
+This document provides information about changes that have been made for each new version
+of the Signature Service Java Configuration Library.
+
+== Version 2405.1
+
+=== Upgrade notes
+This release contains no breaking changes.
