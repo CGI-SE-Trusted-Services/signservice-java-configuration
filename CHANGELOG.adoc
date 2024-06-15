@@ -5,5 +5,11 @@ of the Signature Service Java Configuration Library.
 
 == Version 2405.1
 
+=== Improvements and bug fixes
+* Bump Bouncy Castle to 1.76.
+* Bump SnakeYaml to 2.2.
+* Bump SLF4J API Module to 2.0.13.
+* Bump Jackson Databind to 2.17.1.
+
 === Upgrade notes
 This release contains no breaking changes.
