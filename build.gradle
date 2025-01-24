@@ -1,6 +1,8 @@
-group "se.signatureservice.configuration"
+plugins {
+    id("java-library")
+}
 
-apply plugin: "java-library"
+group "se.signatureservice.configuration"
 
 pluginManager.withPlugin('org.certificateservices.gradle.certservice-gradle-plugin') {
     certserviceSettings {
