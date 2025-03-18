@@ -9,7 +9,8 @@ of the Signature Service Java Configuration Library.
 This release contains breaking changes.
 
 === Changes
-* No long possible to use config parameter allowSignWithExpiredCertificate
+* No longer possible to use config parameter allowSignWithExpiredCertificate
+* SHA512withRSAandMGF1 replaces SHA256withRSA as DEFAULT_SIGNATUREALGORITHM
 
 == Version 2502.1
 
