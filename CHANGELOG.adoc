@@ -16,6 +16,7 @@ This release contains breaking changes.
 
 === Improvements and bug fixes
 * Reformatted build.gradle to adopt the modern plugin application syntax.
+* Bump Bouncy Castle to 1.80.
 
 === Upgrade notes
 This release contains no breaking changes.
