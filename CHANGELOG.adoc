@@ -10,7 +10,9 @@ This release contains breaking changes.
 
 === Changes
 * No longer possible to use config parameter allowSignWithExpiredCertificate
-* SHA512withRSAandMGF1 replaces SHA256withRSA as DEFAULT_SIGNATUREALGORITHM
+* SHA512withRSAandMGF1 replaces SHA256withRSA as DEFAULT_SIGNATUREALGORITHM.
+* Upgraded SnakeYAML from 2.3 to 2.4.
+* Upgraded Jackson to 2.18.3.
 
 == Version 2502.1
 
