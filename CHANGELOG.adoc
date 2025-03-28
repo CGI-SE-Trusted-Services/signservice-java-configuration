@@ -6,7 +6,7 @@ of the Signature Service Java Configuration Library.
 == Version 2503.1
 
 === Upgrade notes
-This release contains breaking changes.
+This release contains *breaking changes*.
 
 === Changes
 * No longer possible to use config parameter allowSignWithExpiredCertificate
