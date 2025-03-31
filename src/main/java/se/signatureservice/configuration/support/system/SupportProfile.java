@@ -351,13 +351,6 @@ public interface SupportProfile {
     boolean isEnableAutomaticValidation();
 
     /**
-     * Flag indicating if it should be possible to create a signed document using
-     * an expired certificate.
-     * Default value: false
-     */
-    boolean isAllowSignWithExpiredCertificate();
-
-    /**
      * Setting indicating the version that should be set in the SignRequestExtension. Default is "1.5" that
      * supports multiple authn context class references.
      */

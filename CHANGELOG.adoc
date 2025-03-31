@@ -3,10 +3,22 @@
 This document provides information about changes that have been made for each new version
 of the Signature Service Java Configuration Library.
 
+== Version 2503.1
+
+=== Upgrade notes
+This release contains *breaking changes*.
+
+=== Changes
+* No longer possible to use config parameter allowSignWithExpiredCertificate
+* SHA512withRSAandMGF1 replaces SHA256withRSA as DEFAULT_SIGNATUREALGORITHM.
+* Upgraded SnakeYAML from 2.3 to 2.4.
+* Upgraded Jackson to 2.18.3.
+
 == Version 2502.1
 
 === Improvements and bug fixes
 * Reformatted build.gradle to adopt the modern plugin application syntax.
+* Bump Bouncy Castle to 1.80.
 
 === Upgrade notes
 This release contains no breaking changes.
