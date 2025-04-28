@@ -4,20 +4,6 @@ plugins {
 
 group "se.signatureservice.configuration"
 
-pluginManager.withPlugin('org.certificateservices.gradle.certservice-gradle-plugin') {
-    certserviceSettings {
-        useMavenCentral = true
-        licenseName = "GNU Lesser General Public License v3.0 or later"
-        licenseURL = "https://www.gnu.org/licenses/lgpl-3.0-standalone.html"
-        useDeveloperPOM = true
-        useScmPOM = true
-        scmConnection = "https://github.com/CGI-SE-Trusted-Services/signservice-java-configuration.git"
-        scmDeveloperConnection = "https://github.com/CGI-SE-Trusted-Services/signservice-java-configuration.git"
-        scmUrl = "https://github.com/CGI-SE-Trusted-Services/signservice-java-configuration"
-        projectUrl = "https://github.com/CGI-SE-Trusted-Services/signservice-java-configuration"
-    }
-}
-
 repositories {
     mavenCentral()
 }
@@ -26,10 +12,9 @@ dependencies {
     implementation "org.bouncycastle:bcmail-jdk18on:${bcVersion}"
     implementation "com.fasterxml.jackson.core:jackson-databind:2.18.3"
     implementation "org.yaml:snakeyaml:2.4"
-    implementation "org.slf4j:slf4j-api:2.0.16"
+    implementation "org.slf4j:slf4j-api:2.0.17"
 }
 
 test {
     useJUnitPlatform()
 }
-
