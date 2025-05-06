@@ -27,6 +27,11 @@ This release contains *breaking changes*.
 * Upgraded SnakeYAML from 2.3 to 2.4.
 * Upgraded Jackson to 2.18.3.
 
+== Version 2502.3
+
+=== Improvements and bug fixes
+* No change.
+
 == Version 2502.1
 
 === Improvements and bug fixes
