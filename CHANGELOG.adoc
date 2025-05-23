@@ -6,15 +6,15 @@ of the Signature Service Java Configuration Library.
 == Version 2505.1
 
 === Upgrade notes
-Changes in preparation for moving to java 21 in Q4 2025
+NOTE: Changes in preparation for moving to java 21 in Q4 2025
 
 === Changes
 
 * Updated the Gradle Wrapper files(gradlew, gradlew.bat, gradle-wrapper.jar) to align with the configured Gradle version.
 * Removed old test library org.codehaus.groovy.modules.http-builder:http-builder
 * Removed not related internal build logic from build.gradle.
-* Bump SLF4J from 2.0.16 to 2.0.17
-* Bump Jackson dependency from 2.18.3 to 2.19.0
+* Removed unnecessary dependencies.
+
 
 == Version 2503.1
 
