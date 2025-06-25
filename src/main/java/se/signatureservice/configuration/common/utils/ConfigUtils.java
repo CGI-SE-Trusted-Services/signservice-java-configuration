@@ -331,10 +331,8 @@ public class ConfigUtils {
             } else if (filePrefix.equalsIgnoreCase("jks")) {
                 type = "JKS";
             } else {
-                throw new InvalidArgumentException("Unsupported truststore filename extension: ${trustStorePrefix}");
-            }
+                throw new InvalidArgumentException("Unsupported truststore filename extension: " + filePrefix);            }
         }
         return type;
     }
-
 }
