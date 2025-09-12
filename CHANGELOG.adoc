@@ -3,6 +3,12 @@
 This document provides information about changes that have been made for each new version
 of the Signature Service Java Configuration Library.
 
+== Version 2509.1
+
+=== Changes
+
+* Some constants related to Saml attributes have been moved to this module.
+
 == Version 2506.1
 
 === Upgrade notes
