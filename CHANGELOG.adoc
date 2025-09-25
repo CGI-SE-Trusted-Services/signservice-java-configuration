@@ -5,8 +5,12 @@ of the Signature Service Java Configuration Library.
 
 == Version 2509.1
 
+=== Upgrade notes
+This release contains no breaking changes.
+
 === Changes
 
+* Upgraded Gradle to `7.6.6`
 * Some constants related to Saml attributes have been moved to this module.
 
 == Version 2506.1
