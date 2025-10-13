@@ -106,6 +106,11 @@ public class Constants {
     public static final String CONTEXT_USAGE_METADATA_SIGN = "METADATASIGN";
 
     /**
+     * Context used for meta data verification
+     */
+    public static final String CONTEXT_USAGE_METADATA_VERIFY = "METADATAVERIFY";
+
+    /**
      * The name of current application
      */
     public static String APPLICATION_NAME = "eid2dss";
@@ -129,19 +134,34 @@ public class Constants {
     public static String CREDENTIAL_SUBTYPE_QCSSCD_PREFIX = "eid2dss_qcsscd_";
 
     /**
-     * Contant indicating the key type part of the credential sub type
-     */
-    public static String CREDENTIAL_SUBTYPE_RSA1024_POSTFIX = "rsa_1024";
-
-    /**
-     * Contant indicating the key type part of the credential sub type
+     * Constant indicating the key type part of the credential sub type
      */
     public static String CREDENTIAL_SUBTYPE_RSA2048_POSTFIX = "rsa_2048";
 
     /**
-     * Contant indicating the key type part of the credential sub type
+     * Constant indicating the key type part of the credential sub type
+     */
+    public static String CREDENTIAL_SUBTYPE_RSA3072_POSTFIX = "rsa_3072";
+
+    /**
+     * Constant indicating the key type part of the credential sub type
+     */
+    public static String CREDENTIAL_SUBTYPE_RSA4096_POSTFIX = "rsa_4096";
+
+    /**
+     * Constant indicating the key type part of the credential sub type
      */
     public static String CREDENTIAL_SUBTYPE_ECDSAP256_POSTFIX = "ecdsa_p256";
+
+    /**
+     * Constant indicating the key type part of the credential sub type
+     */
+    public static String CREDENTIAL_SUBTYPE_ECDSAP384_POSTFIX = "ecdsa_p384";
+
+    /**
+     * Constant indicating the key type part of the credential sub type
+     */
+    public static String CREDENTIAL_SUBTYPE_ECDSAP521_POSTFIX = "ecdsa_p521";
 
     /**
      * Constants of used to specify the name of the token type used.
@@ -155,9 +175,19 @@ public class Constants {
     public static String VERIFICATION_DEPARTMENT = "VERIFICATION";
 
     /**
-     * Entry in cache where the original signrequest is stored temporarly.
+     * Entry in cache where the original signrequest is stored temporarily.
      */
     public static String CACHEENTRY_SIGNREQUEST = "CACHEENTRY_SIGNREQUEST";
+
+    /**
+     * Entry in cache where the original signrequest is stored temporarily.
+     */
+    public static String CACHEENTRY_CRL = "CACHEENTRY_CRL";
+
+    /**
+     * Special cert type indicating OCSP Responder certificate.
+     */
+    public static String CERTTYPE_OCSP = "OCSP";
 
     /**
      * Limit on how long a signing time element in a xades object might differ with current time and still be acceptable.
