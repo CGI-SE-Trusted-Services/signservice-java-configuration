@@ -3,6 +3,12 @@
 This document provides information about changes that have been made for each new version
 of the Signature Service Java Configuration Library.
 
+== Version 2510.1
+
+=== Changes
+
+* Updated Constants class
+
 == Version 2509.1
 
 === Upgrade notes
