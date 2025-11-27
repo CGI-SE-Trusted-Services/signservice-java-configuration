@@ -50,7 +50,7 @@ public class Constants {
 
     public final static String DEFAULT_SIGN_SSL_ALGORITHM = "TLSv1.2";
 
-    public final static String DEFAULT_SIGNATUREALGORITHM = "SHA512withRSAandMGF1";
+    public final static String DEFAULT_SIGNATUREALGORITHM = "SHA256withRSA";
 
     public final static String DEFAULT_XADES_SIGNATURELEVEL = "XAdES-BASELINE-B";
     public final static String DEFAULT_XADES_SIGNATUREPACKAGING = "ENVELOPED";
