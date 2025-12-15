@@ -4,6 +4,19 @@ plugins {
 
 group = "se.signatureservice.configuration"
 
+pluginManager.withPlugin('org.certificateservices.gradle.certservice-gradle-plugin') {
+    certserviceSettings {
+        licenseName = "GNU Lesser General Public License v3.0 or later"
+        licenseURL = "https://www.gnu.org/licenses/lgpl-3.0-standalone.html"
+        useDeveloperPOM = true
+        useScmPOM = true
+        scmConnection = "scm:git:https://github.com/CGI-SE-Trusted-Services/signservice-java-configuration.git"
+        scmDeveloperConnection = "scm:git:https://git@github.com/CGI-SE-Trusted-Services/signservice-java-configuration.git"
+        scmUrl = "https://github.com/CGI-SE-Trusted-Services/signservice-java-configuration"
+        projectUrl = "https://github.com/CGI-SE-Trusted-Services/signservice-java-configuration"
+    }
+}
+
 test {
     useJUnitPlatform()
 }
