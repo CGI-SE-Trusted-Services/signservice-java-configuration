@@ -5,14 +5,15 @@ of the Signature Service Java Configuration Library.
 
 == Version 2602.2
 
-No changes.
+=== Changes
+
+* Upgraded Gradle to 9.3.1.
 
 == Version 2602.1
 
 === Changes
 
 * Unnecessary dependencies removed.
-* Upgraded Gradle to 9.3.1.
 
 == Version 2601.1
 
