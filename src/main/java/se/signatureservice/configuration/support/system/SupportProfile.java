@@ -350,6 +350,12 @@ public interface SupportProfile {
     boolean isEnableAutomaticValidation();
 
     /**
+     * Flag indicating that the completedSignature response should additionally contain a
+     * copy for each PDF document, without signatures.
+     */
+    boolean isCreateSignatureFreePdfData();
+
+    /**
      * Setting indicating the version that should be set in the SignRequestExtension. Default is "1.5" that
      * supports multiple authn context class references.
      */
