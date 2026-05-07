@@ -12,6 +12,8 @@
  *************************************************************************/
 package se.signatureservice.configuration.common;
 
+import java.io.Serial;
+
 /**
  * Exception thrown by external API interfaces indicating something went wrong internally 
  * within the application due to configuration error or problems with underlying systems.
@@ -24,7 +26,8 @@ public class InternalServerException extends Exception {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	@Serial
+    private static final long serialVersionUID = 1L;
 
 	/**
 	 * Exception thrown by external API interfaces indicating something went wrong internally 
